@@ -45,33 +45,26 @@ export default function Navbar() {
       <nav
         aria-label="Main"
         className={`mx-auto flex max-w-[1440px] items-center justify-between px-6 transition-all duration-300 md:px-12 ${
-          solid ? "py-3" : "py-5"
+          solid ? "py-2" : "py-4"
         }`}
       >
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-3"
+          className="flex items-center group py-1"
           onClick={() => setOpen(false)}
           aria-label={`${site.name} home`}
         >
-          <span className="relative block h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-gold/40">
+          <div className="relative h-12 w-48 sm:h-14 sm:w-56 transition-transform duration-300 group-hover:scale-105">
             <Image
-              src="/logo.jpg"
+              src="/Green House MD Developers Logo.png"
               alt={`${site.name} logo`}
               fill
-              sizes="56px"
-              className="scale-[1.12] object-contain"
+              sizes="(max-width: 640px) 192px, 224px"
+              className="object-contain object-left drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+              priority
             />
-          </span>
-          <span className="hidden flex-col leading-tight sm:flex">
-            <span className="font-display text-base font-bold tracking-wide text-white">
-              MAHAVIRA DEVELOPERS
-            </span>
-            <span className="text-[10px] font-semibold tracking-[0.35em] text-gold">
-              LLP
-            </span>
-          </span>
+          </div>
         </Link>
 
         {/* Desktop links */}
